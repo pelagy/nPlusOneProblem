@@ -10,31 +10,23 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.validation.Valid;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Set;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Company {
+public class Filial {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Valid
     private String name;
 
-    private LocalDateTime createdAt;
+    private Long code;
 
-    @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private Set<User> users;
-
-    @OneToMany(mappedBy = "company", fetch = FetchType.LAZY)
-    private List<Filial> filiales;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Company company;
 }
