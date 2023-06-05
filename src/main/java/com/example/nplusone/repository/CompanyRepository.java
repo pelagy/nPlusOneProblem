@@ -12,6 +12,6 @@ import java.util.Optional;
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, Long> {
 
-    @EntityGraph(value = "Company.users")
+    @EntityGraph(value = "Company.filiales")
     Optional<Company> findById(@Param("id") Long id);
 }

@@ -3,14 +3,21 @@ package com.example.nplusone.entity;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedAttributeNode;
+import javax.persistence.NamedEntityGraph;
+import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-@NamedEntityGraph(name = "Company.users", attributeNodes = @NamedAttributeNode("users"))
+@NamedEntityGraph(name = "Company.filiales", attributeNodes = @NamedAttributeNode("filiales"))
 @Entity
 @Data
 @Builder
