@@ -12,7 +12,6 @@ import java.util.Optional;
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, Long> {
 
-//        @Query("FROM Company c LEFT JOIN FETCH c.users WHERE c.id = :id")
-////    @EntityGraph(value = "Company.users")
-//    Optional<Company> findById(@Param("id") Long id);
+    @EntityGraph(value = "Company.users")
+    Optional<Company> findById(@Param("id") Long id);
 }

@@ -11,16 +11,12 @@ import com.example.nplusone.repository.CompanyRepository;
 import com.example.nplusone.repository.FilialRepository;
 import com.example.nplusone.repository.UserChatRepository;
 import com.example.nplusone.repository.UserRepository;
-import com.example.nplusone.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
-import java.util.Properties;
 
 @SpringBootTest
 public class NPlusOneTest {
@@ -33,9 +29,6 @@ public class NPlusOneTest {
 
     @Autowired
     private FilialRepository filialRepository;
-
-    @Autowired
-    private UserService userService;
 
     @Autowired
     private ChatRepository chatRepository;
