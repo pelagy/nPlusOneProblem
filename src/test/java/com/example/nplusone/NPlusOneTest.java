@@ -50,6 +50,7 @@ public class NPlusOneTest {
     }
 
     @Test
+    @Transactional
     void findCompanyByIdTest() {
         companyRepository.findById(1L);
         System.out.println();
